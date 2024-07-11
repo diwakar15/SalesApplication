@@ -3,7 +3,7 @@
 namespace SalesApplication.Interface
 {
 
-    public interface ISalesRecordRepository
+    public interface ISalesRecordRepository1
     {
         Task<SalesRecord> GetByIdAsync(int id);
         Task<IEnumerable<SalesRecord>> GetAllAsync();

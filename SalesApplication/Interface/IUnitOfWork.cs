@@ -2,7 +2,7 @@
 {
     public interface IUnitOfWork : IDisposable
     {
-        ISalesRecordRepository SalesRecords { get; }
+        ISalesRecordRepository1 SalesRecords { get; }
         Task<int> CompleteAsync();
     }
 }

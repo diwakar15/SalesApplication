@@ -25,8 +25,9 @@ namespace SalesApplication.App_Start
 
 
             services.AddDbContext<SalesDbContext>(options =>options.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
-            services.AddSingleton<ISalesRecordService, SalesRecordService>();
-            services.AddSingleton<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<ISalesRecordService, SalesRecordService>();
+            //services.AddSingleton<Interface.ISalesRecordRepository1, Interface.SalesRecordRepository1>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {

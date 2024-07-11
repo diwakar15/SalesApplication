@@ -4,11 +4,11 @@ using SalesApplication.Model;
 namespace SalesApplication.Interface
 {
 
-    public class SalesRecordRepository : ISalesRecordRepository
+    public class SalesRecordRepository1 : ISalesRecordRepository1
     {
         private readonly DbContext _context;
 
-        public SalesRecordRepository(DbContext context)
+        public SalesRecordRepository1(DbContext context)
         {
             _context = context;
         }

@@ -1,18 +1,19 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SalesApplication.Data;
 
 namespace SalesApplication.Interface
 {
         public class UnitOfWork : IUnitOfWork
         {
-            private readonly DbContext _context;
+            private readonly SalesDbContext _context;
 
-            public UnitOfWork(DbContext context)
+            public UnitOfWork(SalesDbContext context)
             {
                 _context = context;
-                SalesRecords = new SalesRecordRepository(_context);
+                SalesRecords = new SalesRecordRepository1(_context);
             }
 
-            public ISalesRecordRepository SalesRecords { get; }
+            public ISalesRecordRepository1 SalesRecords { get; }
 
             public async Task<int> CompleteAsync()
             {
